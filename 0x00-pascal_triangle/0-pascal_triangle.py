@@ -1,23 +1,21 @@
 #!/usr/bin/python3
-"""
-	This is  the Pascal's Triangle function
-"""
+""" This is the Pascal Triangle Interview Function"""
 
 
-def pascal_triangle(n):
-    """ This returns a list of lists of integers representing
-        the Pascal's triangle of n
-    """
-    triangle = []
-    for s in range(1, n+1):
-        row = []
-        for t in range(s):
-            if t == 0 or t == s-1:
-                n = 1
-                row.append(n)
-            else:
-                n = triangle[s-2][t-1] + triangle[s-2][t]
-                row.append(n)
+def pascal_triangle(r):
+    """This returns a list of lists of numbers
+    representing the Pascal's triangle of r"""
+    if r <= 0:
+        return []
+
+    triangle = [[1]]
+
+    for s in range(1, r):
+        row = [1]
+
+        for t in range(1, s):
+            row.append(triangle[s-1][t-1] + triangle[s-1][t])
+        row.append(1)
         triangle.append(row)
 
     return triangle
