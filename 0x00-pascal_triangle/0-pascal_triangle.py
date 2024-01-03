@@ -14,7 +14,7 @@ def pascal_triangle(n):
         for t in range(s):
             if t == 0 or t == s-1:
                 n = 1
-                row.append(r)
+                row.append(n)
             else:
                 n = triangle[s-2][t-1] + triangle[s-2][t]
                 row.append(n)
