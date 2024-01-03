@@ -4,7 +4,7 @@
 """
 
 
-def pascal_triangle(n):
+def pascal_triangle(r):
     """ This returns a list of lists of integers representing
         the Pascal's triangle of r
     """
