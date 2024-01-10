@@ -1,24 +1,23 @@
 #!/usr/bin/python3
-""" This defines a function that determines if a box containing 
-    a list of lists can be opened using keys stored in the lists
+"""
+    This contains the Pascal's Triangle function
 """
 
 
-def canUnlockAll(boxes):
+def pascal_triangle(n):
+    """ This will return a list of lists of integers
+        representing the Pascal's triangle of n
     """
-     This a method that determines if all the boxes can be opened
+    triangle = []
+    for s in range(1, n+1):
+        row = []
+        for t in range(s):
+            if t == 0 or t == s-1:
+                n = 1
+                row.append(n)
+            else:
+                n = triangle[s-2][t-1] + triangle[s-2][t]
+                row.append(n)
+        triangle.append(row)
 
-    :param boxes:
-    :return: True or False
-    """
-    if not boxes or type(boxes) is not list:
-        return False
-
-    unlocked = [0]
-    for s in unlocked:
-        for key in boxes[s]:
-            if key not in unlocked and key < len(boxes):
-                unlocked.append(key)
-    if len(unlocked) == len(boxes):
-        return True
-    return False
+    return triangle
