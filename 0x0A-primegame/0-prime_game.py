@@ -59,9 +59,9 @@ def isWinner(x, nums):
     for elem in range(x):
         nums.sort()
         num = nums[elem]
-        for i in range(1, num + 1):
-            cluster.add(i)
-            if i == num + 1:
+        for a in range(1, num + 1):
+            cluster.add(a)
+            if a == num + 1:
                 break
         temp = findPrimes(cluster)
 
